@@ -1,17 +1,18 @@
 class AuthController < ApplicationController
   def login
-    auth = request.env['omniauth.auth']
     return
   end
 
   def logout
+    @access_token =nil
     reset_session
     redirect_to root_path
     return
   end
 
   def callback
-    @access_token = true
+    auth = request.env["omniauth.auth"]
+    session[:access_token] = auth['credentials'].token
     redirect_to root_path
     return
   end

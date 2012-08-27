@@ -2,6 +2,9 @@
 <p>Find me in app/views/welcome/index.html.erb</p>
 <% if @access_token %>
   <%= link_to t(:logout), logout_path %>
+  <%= form_tag facebook_path do |f| %>
+    <%= submit_tag t(:tooth) %>
+  <% end %>
 <% else %>
   <%= link_to t(:facebook_login), '/auth/facebook' %>
 <% end %>

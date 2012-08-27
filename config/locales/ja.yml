@@ -1,9 +1,9 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
-  hello: "Hello world"
-  app_title: "hagaitai"
-  facebook_login: "Facebook login"
-  facebook_logout: "Logout"
-  tooth: "tooth hurts"
+ja:
+  hello: "ハローワールド"
+  app_title: "歯が痛い"
+  facebook_login: "Facebook でログイン"
+  facebook_logout: "ログアウト"
+  tooth: "歯が痛い"
