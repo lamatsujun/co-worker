@@ -1,0 +1,7 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+<% if @access_token %>
+  <%= link_to t(:logout), logout_path %>
+<% else %>
+  <%= link_to t(:facebook_login), '/auth/facebook' %>
+<% end %>

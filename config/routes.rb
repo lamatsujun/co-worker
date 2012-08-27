@@ -1,4 +1,11 @@
 CoWorker::Application.routes.draw do
+
+  match "/auth/:provider/callback" => "auth#callback"
+  match "/login" => "auth#login"
+  match "/logout" => "auth#logout", :as => :logout
+
+  post "facebook" => "welcome#update", format: false
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +55,7 @@ CoWorker::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'welcome#index', :via => :get
 
   # See how all your routes lay out with "rake routes"
 
