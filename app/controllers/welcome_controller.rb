@@ -3,8 +3,12 @@ class WelcomeController < ApplicationController
   end
 
   def update
-    @graph = Koala::Facebook::API.new(@access_token)
-    @graph.put_wall_post t('tooth')
+    begin
+      @graph = Koala::Facebook::API.new(@access_token)
+      @graph.put_wall_post t('tooth')
+    rescue
+      flash[:error] << "wait"
+    end
     redirect_to root_path
     return
   end

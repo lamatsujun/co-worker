@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :set_access_token
+  before_filter :set_access_token, :init_flash
 
   private
 
@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
       @access_token = session[:access_token]
     end
   end
+
+  def init_flash
+    flash[:error] ||= []
+  end
+
 end
